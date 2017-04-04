@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">MyTouchEvent</string>
+    <string name="big_iner">大拦截</string>
+    <string name="big_dis">大分发</string>
+    <string name="big_ontou">大消耗</string>
+
+
+    <string name="middle_iner">中拦截</string>
+    <string name="middle_dis">中分发</string>
+    <string name="middle_ontou">中消耗</string>
+
+
+    <string name="small_iner">小拦截</string>
+    <string name="small_dis">小分发</string>
+    <string name="small_ontou">小消耗</string>
+
 </resources>

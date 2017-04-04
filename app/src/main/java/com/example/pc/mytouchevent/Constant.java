@@ -6,9 +6,20 @@ package com.example.pc.mytouchevent;
 
 public class Constant {
 
-    public static final int MOVEBIG = 1;
-    public static final int MOVEMIDDLE = 2;
-    public static final int MOVESMALL = 3;
-    public static   int MOVEFLAG = MOVEBIG;
+    public static boolean BIGINTERFLAG = false;
+    public static boolean BIGDISPATCHFLAG = false;
+    public static boolean BIGTOUFLAG = false;
+
+    public static boolean MIDDLEINTERFALG = false;
+    public static boolean MIDDLEDISPATCHFLAG = false;
+    public static boolean MIDDLETOUFLAG = false;
+
+    public static boolean SMALLINTERFLAG = false;
+    public static boolean SMALLDISPATCHFLAG = false;
+    public static boolean SMALLTOUFLAG = false;
+
+
+
+
 
 }

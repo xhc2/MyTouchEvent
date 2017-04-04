@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.ViewGroup;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
@@ -29,14 +29,13 @@ public class BigView extends FrameLayout {
         super(context, attrs, defStyleAttr);
     }
 
+
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
 
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 Log.e("xhc", "big iner down");
-                if(Constant.MOVEFLAG == Constant.MOVEBIG)
-                    return true;
                 break;
             case MotionEvent.ACTION_MOVE:
                 Log.e("xhc", "big iner move");
@@ -46,12 +45,13 @@ public class BigView extends FrameLayout {
                 break;
         }
 
-        return super.onInterceptTouchEvent(ev);
+        return Constant.BIGINTERFLAG;
+
+//        return true;
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 Log.e("xhc", "big dis down");
@@ -62,6 +62,15 @@ public class BigView extends FrameLayout {
             case MotionEvent.ACTION_UP:
                 Log.e("xhc", "big dis up");
                 break;
+        }
+        View viewFrist = null;
+        if (getChildCount() > 0) {
+            viewFrist = getChildAt(0);
+        }
+        if(viewFrist != null && Constant.BIGDISPATCHFLAG){
+            //将事件手动传递给子view
+            viewFrist.dispatchTouchEvent(ev);
+            return true;
         }
         return super.dispatchTouchEvent(ev);
     }
@@ -75,20 +84,20 @@ public class BigView extends FrameLayout {
                 break;
             case MotionEvent.ACTION_MOVE:
                 Log.e("xhc", "big tou move");
-                setPosition(ev.getRawX() , ev.getRawY());
+                setPosition(ev.getRawX(), ev.getRawY());
                 break;
             case MotionEvent.ACTION_UP:
                 Log.e("xhc", "big tou up");
                 break;
         }
-        return true;
+        return Constant.BIGTOUFLAG;
     }
 
-    private void setPosition(float x , float y ){
+    private void setPosition(float x, float y) {
 
-        RelativeLayout.LayoutParams params =(RelativeLayout.LayoutParams)getLayoutParams();
-        params.leftMargin = (int)x;
-        params.topMargin = (int)y;
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) getLayoutParams();
+        params.leftMargin = (int) x;
+        params.topMargin = (int) y;
         this.setLayoutParams(params);
 
     }

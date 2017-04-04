@@ -18,20 +18,20 @@
 
     <com.example.pc.mytouchevent.BigView
         android:id="@+id/biger"
-        android:layout_width="800px"
-        android:layout_height="800px"
+        android:layout_width="500px"
+        android:layout_height="500px"
         android:background="#DB3838">
 
         <com.example.pc.mytouchevent.MiddleView
             android:id="@+id/middle"
-            android:layout_width="500px"
-            android:layout_height="500px"
+            android:layout_width="300px"
+            android:layout_height="300px"
             android:background="#2E1B98">
 
             <com.example.pc.mytouchevent.SmallView
                 android:id="@+id/small"
-                android:layout_width="300px"
-                android:layout_height="300px"
+                android:layout_width="150px"
+                android:layout_height="150px"
                 android:background="#198E31" />
 
         </com.example.pc.mytouchevent.MiddleView>
@@ -43,23 +43,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="移动big" />
+        android:text="启动" />
 
-    <Button
-        android:id="@+id/move_middle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/move_bigger"
-        android:layout_alignParentBottom="true"
-        android:text="移动middle" />
+    <!--<Button-->
+        <!--android:id="@+id/move_middle"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_toRightOf="@id/move_bigger"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:text="移动middle" />-->
 
-    <Button
-        android:id="@+id/move_small"
-        android:layout_width="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/move_middle"
-        android:text="移动small" />
+    <!--<Button-->
+        <!--android:id="@+id/move_small"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_toRightOf="@id/move_middle"-->
+        <!--android:text="移动small" />-->
 
 
 </RelativeLayout>

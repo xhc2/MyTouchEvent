@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.FrameLayout;
 
 /**
@@ -42,7 +43,7 @@ public class MiddleView extends FrameLayout {
                 break;
         }
 
-        return super.onInterceptTouchEvent(ev);
+        return Constant.MIDDLEINTERFALG;
     }
 
     @Override
@@ -58,7 +59,15 @@ public class MiddleView extends FrameLayout {
                 Log.e("xhc", "middle dis up");
                 break;
         }
-
+        View viewFrist = null;
+        if (getChildCount() > 0) {
+            viewFrist = getChildAt(0);
+        }
+        if(viewFrist != null && Constant.MIDDLEDISPATCHFLAG){
+            //将事件手动传递给子view
+            viewFrist.dispatchTouchEvent(ev);
+            return true;
+        }
         return super.dispatchTouchEvent(ev);
     }
 
@@ -71,11 +80,22 @@ public class MiddleView extends FrameLayout {
                 break;
             case MotionEvent.ACTION_MOVE:
                 Log.e("xhc", "middle touch move");
+                setMyPosition(event.getRawX() , event.getRawY());
                 break;
             case MotionEvent.ACTION_UP:
                 Log.e("xhc", "middle touch up");
                 break;
         }
-        return super.onTouchEvent(event);
+        return Constant.MIDDLETOUFLAG;
     }
+
+    private void setMyPosition(float x , float y){
+        Log.e("m" , " left "+ x +" y "+y);
+        LayoutParams params = (LayoutParams)getLayoutParams();
+        params.leftMargin = (int)x;
+        params.topMargin = (int)y;
+        this.setLayoutParams(params);
+
+    }
+
 }

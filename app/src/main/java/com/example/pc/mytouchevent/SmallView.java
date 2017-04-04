@@ -41,7 +41,7 @@ public class SmallView extends FrameLayout {
                 Log.e("xhc", "small iner up");
                 break;
         }
-        return super.onInterceptTouchEvent(ev);
+        return Constant.SMALLINTERFLAG;
     }
 
     @Override
@@ -68,12 +68,23 @@ public class SmallView extends FrameLayout {
                 break;
             case MotionEvent.ACTION_MOVE:
                 Log.e("xhc", "small tou move");
+                setMyPosition(event.getRawX() , event.getRawY());
                 break;
             case MotionEvent.ACTION_UP:
                 Log.e("xhc", "small tou up");
                 break;
         }
 
-        return super.onTouchEvent(event);
+        return Constant.SMALLTOUFLAG;
     }
+
+    private void setMyPosition(float x , float y){
+
+        LayoutParams params =(LayoutParams)getLayoutParams();
+        params.leftMargin = (int)x ;
+        params.topMargin = (int)y;
+        this.setLayoutParams(params);
+    }
+
+
 }
