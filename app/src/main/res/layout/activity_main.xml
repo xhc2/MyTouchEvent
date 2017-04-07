@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/move_bigger"
         android:layout_alignParentBottom="true"
-        android:text="跳转" />
+        android:text="和listview的事件冲突" />
 
     <!--<Button-->
         <!--android:id="@+id/move_middle"-->
