@@ -1,6 +1,7 @@
 package com.example.pc.mytouchevent;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -29,6 +30,14 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                 dialog.show();
             }
         });
+        findViewById(R.id.move_start).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this , MyActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         bigIner = (CheckBox)dialog.findViewById(R.id.big_iner);
         bigDis = (CheckBox)dialog.findViewById(R.id.big_dis);
@@ -57,8 +66,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         bigOntou.setOnCheckedChangeListener(this);
 
 
-
-
     }
 
     @Override
@@ -82,7 +89,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         else if(buttonView == middleDis){
             Constant.MIDDLEDISPATCHFLAG =  isChecked;
         }
-
         else if(buttonView == smallIner){
             Constant.SMALLINTERFLAG = isChecked;
         }

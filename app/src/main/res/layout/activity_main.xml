@@ -45,6 +45,14 @@
         android:layout_alignParentBottom="true"
         android:text="启动" />
 
+    <Button
+        android:id="@+id/move_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/move_bigger"
+        android:layout_alignParentBottom="true"
+        android:text="跳转" />
+
     <!--<Button-->
         <!--android:id="@+id/move_middle"-->
         <!--android:layout_width="wrap_content"-->

@@ -86,6 +86,9 @@ public class MiddleView extends FrameLayout {
                 Log.e("xhc", "middle touch up");
                 break;
         }
+
+//        Log.e("xhc" , "middle return "+Constant.MIDDLETOUFLAG);
+
         return Constant.MIDDLETOUFLAG;
     }
 
